@@ -407,6 +407,9 @@ as.numeric(as.factor(pull(hw1_df1, logical_vec))) * pull(hw1_df1,random_samp)</c
 <pre><code>## [1] -0.50219235  0.26306233 -0.07891709  1.77356962  0.23394254  0.63726018
 ## [7] -0.58179068  1.42906542</code></pre>
 <p>Comment: After converting the logical vector to a factor, its output is string which can not be multiplied. However, after converting this factor into numeric, its outputing value transformed from “0”, “1” (TRUE/FALSE) into “1”,“2” (DIFFERENT LEVELS).</p>
+</div>
+<div id="problem-2" class="section level2">
+<h2>Problem 2</h2>
 <pre class="r"><code># Create a data frame
 set.seed(200)
 hw1_df2 = tibble(
