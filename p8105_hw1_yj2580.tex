@@ -1,0 +1,298 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={p8105\_hw1\_yj2580},
+            pdfauthor={yj2580},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{p8105\_hw1\_yj2580}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{yj2580}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{9/14/2019}
+
+
+\begin{document}
+\maketitle
+
+\hypertarget{problem-1}{%
+\subsection{Problem 1}\label{problem-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Creat a data frame}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{100}\NormalTok{)}
+\NormalTok{hw1_df1 =}\StringTok{ }\KeywordTok{tibble}\NormalTok{(}
+  \DataTypeTok{random_samp =} \KeywordTok{rnorm}\NormalTok{(}\DecValTok{8}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{),}
+  \DataTypeTok{logical_vec =}\NormalTok{ random_samp }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{,}
+  \DataTypeTok{char_vec =} \KeywordTok{c}\NormalTok{(}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{, }\StringTok{"g"}\NormalTok{, }\StringTok{"h"}\NormalTok{),}
+  \DataTypeTok{factor_vec =} \KeywordTok{factor}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"level I"}\NormalTok{, }\StringTok{"level II"}\NormalTok{, }\StringTok{"level III"}\NormalTok{, }\StringTok{"level II"}\NormalTok{, }\StringTok{"level III"}\NormalTok{, }\StringTok{"level III"}\NormalTok{, }\StringTok{"level I"}\NormalTok{, }\StringTok{"level I"}\NormalTok{), }\DataTypeTok{levels =}\KeywordTok{c}\NormalTok{(}\StringTok{"level I"}\NormalTok{, }\StringTok{"level II"}\NormalTok{, }\StringTok{"level III"}\NormalTok{))}
+\NormalTok{)}
+
+\CommentTok{# pull variables from the dataframe, and take the mean of each variable.}
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, random_samp))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1256937
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, logical_vec))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.625
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# mean(pull(hw1_df1, char_vec))    it doesn't work}
+\CommentTok{# mean(pull(hw1_df1, factor_vec))  it doesn't work}
+\end{Highlighting}
+\end{Shaded}
+
+Comment: When taking the mean of each variable, random sample vector and
+logical vector worked but character vector and factor vector failed. The
+reason is that random sample vector and logial vector are numeric while
+character vector and factor vector are not. (Although the output of
+logical vector is ``TRUE'' and ``FALSE'', it is considered as ``0'' and
+``1'' by default in system.) Only numeric vectors can be successfully
+involved in computation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# apply the as.numeric function to the logical, character, and factor variables, and show this chunk but not the output using "eval=false"}
+
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, logical_vec)))}
+\CommentTok{#mean(as.numeric(pull(hw1_df1, char_vec)))}
+\KeywordTok{mean}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, factor_vec)))}
+\end{Highlighting}
+\end{Shaded}
+
+Comment: After converting logical vector, character vector and factor
+vector to numeric, mean of logical vector stays the same, mean of factor
+vector still fails to work, and mean of factor vector becomes available,
+resulting in 2. The reason for the change of the mean of factor vector
+is that its output becomes ``1'', ``2'' and ``3'' instead of string.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#convert the logical vector to numeric, and multiply the random sample by the result}
+\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, logical_vec)) }\OperatorTok{*}\StringTok{ }\KeywordTok{pull}\NormalTok{(hw1_df1,random_samp)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.0000000 0.1315312 0.0000000 0.8867848 0.1169713 0.3186301 0.0000000
+## [8] 0.7145327
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#convert the logical vector to a factor, and multiply the random sample by the result}
+\CommentTok{#as.factor(pull(hw1_df1, logical_vec)) * pull(hw1_df1,random_samp)}
+\CommentTok{#it doesn't work}
+
+\CommentTok{#convert the logical vector to a factor and then convert the result to numeric, and multiply the random sample by the result}
+\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{as.factor}\NormalTok{(}\KeywordTok{pull}\NormalTok{(hw1_df1, logical_vec))) }\OperatorTok{*}\StringTok{ }\KeywordTok{pull}\NormalTok{(hw1_df1,random_samp)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.50219235  0.26306233 -0.07891709  1.77356962  0.23394254  0.63726018
+## [7] -0.58179068  1.42906542
+\end{verbatim}
+
+Comment: After converting the logical vector to a factor, its output is
+string which can not be multiplied. However, after converting this
+factor into numeric, its outputing value transformed from ``0'', ``1''
+(TRUE/FALSE) into ``1'',``2'' (DIFFERENT LEVELS).
+
+\hypertarget{problem-2}{%
+\subsection{Problem 2}\label{problem-2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create a data frame}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{200}\NormalTok{)}
+\NormalTok{hw1_df2 =}\StringTok{ }\KeywordTok{tibble}\NormalTok{(}
+  \DataTypeTok{x =} \KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{),}
+  \DataTypeTok{y =} \KeywordTok{rnorm}\NormalTok{(}\DecValTok{500}\NormalTok{, }\DataTypeTok{mean =} \DecValTok{0}\NormalTok{, }\DataTypeTok{sd =} \DecValTok{1}\NormalTok{),}
+  \DataTypeTok{x_y =}\NormalTok{ x }\OperatorTok{+}\StringTok{ }\NormalTok{y }\OperatorTok{>}\StringTok{ }\DecValTok{1}\NormalTok{,}
+  \DataTypeTok{num_xy =} \KeywordTok{as.numeric}\NormalTok{(x_y),}
+  \DataTypeTok{fac_xy =} \KeywordTok{as.factor}\NormalTok{(x_y)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The size of the dataset is 500 rows and 5 columns. The mean is
+0.0187947. The median is 0.015362. And the standard deviation of x is
+0.9676439. The proportion of cases for which x + y \textgreater{} 1 is
+0.25.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Make a scatterplot of y vs x; color points using the logical variable and export it. }
+\KeywordTok{ggplot}\NormalTok{(hw1_df2, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, }\DataTypeTok{color =}\NormalTok{ x_y)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8105_hw1_yj2580_files/figure-latex/Problem2_Graph-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggsave}\NormalTok{(}\StringTok{"plot1_colored_by_logicalVector.pdf"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Saving 6.5 x 4.5 in image
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Make a scatterplot that color points using the numeric variables.}
+\KeywordTok{ggplot}\NormalTok{(hw1_df2, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, }\DataTypeTok{color =}\NormalTok{ num_xy)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8105_hw1_yj2580_files/figure-latex/Problem2_Graph-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Make a scatterplot that color points using the factor variables.}
+\KeywordTok{ggplot}\NormalTok{(hw1_df2, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, }\DataTypeTok{color =}\NormalTok{ fac_xy)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{p8105_hw1_yj2580_files/figure-latex/Problem2_Graph-3.pdf}
+
+Comment: These three scatterplots all show the same pattern that
+different color points are separated by a line, which approximately
+follows x + y = 1. Above this line, all dots satisfy the condition that
+x + y \textgreater{} 1, displayed in green or light blue color. Below
+this line, all dots satisfy the condition that x + y \textless{} 1,
+displayed in red or dark blue color. There are also obvious patterns in
+how these dots are distributed. Around that line, most of the dots
+gather here intensively. Away from that line, a smaller amount of dots
+are sparsely spread.
+
+
+\end{document}
